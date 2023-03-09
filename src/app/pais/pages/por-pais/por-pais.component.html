@@ -1,0 +1,38 @@
+<h2>CONSULTA POR PAIS</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <form (ngSubmit)="buscar()" autocomplete="off">
+            <input type="text" class="form-control" [(ngModel)]="termino" name="termino" placeholder="Buscar pais...." />
+        </form>
+    </div>
+</div>
+<hr>
+<div class="alert alert-danger">
+    No se encontro el termino insertado
+</div>
+
+<div class="row">
+    <div class="col">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th> # </th>
+                    <th> Bandera </th>
+                    <th> Nombre </th>
+                    <th> Poblacion </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>bandera</td>
+                    <td>Colombia</td>
+                    <td>2.009.088</td>
+                    <td><a href="/pais:code">ver</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
