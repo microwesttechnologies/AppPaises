@@ -2,37 +2,41 @@
 <hr>
 <div class="row">
     <div class="col">
-        <form (ngSubmit)="buscar()" autocomplete="off">
+        <form (ngSubmit)=" buscar()" autocomplete="off">
             <input type="text" class="form-control" [(ngModel)]="termino" name="termino" placeholder="Buscar pais...." />
         </form>
     </div>
 </div>
 <hr>
-<div class="alert alert-danger">
-    No se encontro el termino insertado
+<div class="alert alert-danger" *ngIf="error">
+    No hay paises llamados como <strong>{{this.termino}}</strong> 
 </div>
 
 <div class="row">
     <div class="col">
-        <table class="table table-hover">
+        <table class="table table-hover" *ngIf="!error">
             <thead>
                 <tr>
                     <th> # </th>
                     <th> Bandera </th>
                     <th> Nombre </th>
+                    <th> Capital </th>
                     <th> Poblacion </th>
                     <th> </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>bandera</td>
-                    <td>Colombia</td>
-                    <td>2.009.088</td>
-                    <td><a href="/pais:code">ver</a></td>
+                <tr *ngFor="let pais of paises; let i = index">
+                    <td>{{i + 1}}</td>
+                    <td><img class="flags" src="{{pais.flags.png}}" ></td>
+                    <td>{{pais.altSpellings[2]}}</td>
+                    <td>{{pais.capital}}</td>
+                    <td>{{pais.population | number}}</td>
+                    <td><a >ver</a></td>
                 </tr>
+                
             </tbody>
+            
         </table>
     </div>
 </div>
