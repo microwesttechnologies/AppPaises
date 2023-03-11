@@ -1,3 +1,9 @@
+// To parse this data:
+//
+//   import { Convert } from "./file";
+//
+//   const rESTCountries = Convert.toRESTCountries(json);
+
 export interface RESTCountries {
     name:         Name;
     tld:          string[];
@@ -111,4 +117,15 @@ export interface Translation {
 export interface PostalCode {
     format: string;
     regex:  string;
+}
+
+// Converts JSON strings to/from your types
+export class Convert {
+    public static toRESTCountries(json: string): RESTCountries[] {
+        return JSON.parse(json);
+    }
+
+    public static rESTCountriesToJson(value: RESTCountries[]): string {
+        return JSON.stringify(value);
+    }
 }

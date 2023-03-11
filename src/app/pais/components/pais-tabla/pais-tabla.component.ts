@@ -1,19 +1,19 @@
-import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RESTCountries } from '../../interface/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
-
 @Component({
-  selector: 'app-por-pais',
-  templateUrl: './por-pais.component.html',
-  styleUrls: ['./por-pais.component.scss']
+  selector: 'app-pais-tabla',
+  templateUrl: './pais-tabla.component.html',
+  styleUrls: ['./pais-tabla.component.scss']
 })
-export class PorPaisComponent {
- 
-  
+
+export class PaisTablaComponent {
+
   error: boolean = false;
   termino: string = "";
   paises: RESTCountries[] = [];
+ 
 
 
   constructor(private paisService: PaisService) {}
@@ -33,5 +33,4 @@ export class PorPaisComponent {
       });
 
   }
-
 }
