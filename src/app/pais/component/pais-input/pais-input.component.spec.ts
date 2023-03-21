@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaisTablaComponent } from './pais-tabla.component';
+import PaisInputComponent from './pais-input.component';
 
-describe('PaisTablaComponent', () => {
-  let component: PaisTablaComponent;
-  let fixture: ComponentFixture<PaisTablaComponent>;
+describe('PaisInputComponent', () => {
+  let component: PaisInputComponent;
+  let fixture: ComponentFixture<PaisInputComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaisTablaComponent ]
+      declarations: [ PaisInputComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PaisTablaComponent);
+    fixture = TestBed.createComponent(PaisInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

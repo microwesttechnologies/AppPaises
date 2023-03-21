@@ -8,7 +8,8 @@ import { PorCapitalComponent } from './pages/por-capital/por-capital.component';
 import { PorRegionComponent } from './pages/por-region/por-region.component';
 import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 import { ErrosComponent } from './pages/erros/erros.component';
-import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component';
+import { PaisTableComponent } from './component/pais-table/pais-table.component';
+import PaisInputComponent from './component/pais-input/pais-input.component';
 
 
 
@@ -21,7 +22,8 @@ import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component
     PorRegionComponent,
     VerPaisComponent,
     ErrosComponent,
-    PaisTablaComponent
+    PaisTableComponent,
+    PaisInputComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,7 @@ import { PaisTablaComponent } from './components/pais-tabla/pais-tabla.component
     PorRegionComponent,
     VerPaisComponent,
     ErrosComponent,
-    PaisTablaComponent
+    PaisTableComponent
    
   ]
 })

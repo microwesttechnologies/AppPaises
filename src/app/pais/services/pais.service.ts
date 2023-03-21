@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/enviroments/enviroment';
-import { RESTCountries } from '../interface/pais.interface';
+import { RESTCountries } from '../interfaces/pais.interface';
 
 @Injectable({
   providedIn: 'root'
