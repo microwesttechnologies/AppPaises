@@ -32,19 +32,6 @@ export class PorPaisComponent {
 
   sugerencias(termino: string) {
     this.error = false;
-
-    this.termino = termino;
-    this.error = false;
-
-    this.paisService.buscarPais(this.termino).subscribe(
-      (paises) => {
-        this.paises = paises;
-
-      }, (err) => {
-        this.error = true;
-        this.paises = [];
-      }
-    );
   }
 }
 
