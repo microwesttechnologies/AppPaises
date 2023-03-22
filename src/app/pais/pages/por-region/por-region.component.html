@@ -1,1 +1,40 @@
-<p>por-region works!</p>
+<div class="col animate__animated animate__fadeInUp">
+    <h3>CONSULTA POR REGION <small> {{regionActiva | titlecase}}</small></h3>
+    <hr>
+
+    <h5>Seleccione la region</h5>
+</div>
+
+<div class="row animate__animated animate__fadeInUp">
+    <div class="col">
+        <button *ngFor="let region of regiones" class="mr-1" [class]="getClasCSS(region)"
+            (click)="activarRegion(region)">
+            {{region | titlecase}}
+        </button>
+    </div>
+</div>
+<hr>
+<div class="alert alert-danger" *ngIf="error">
+    No hay paises llamados como <strong>{{this.region}}</strong>
+</div>
+
+<div class="row" *ngIf="paises.length > 0">
+    <div class="col">
+        <app-pais-table [paises]="paises"></app-pais-table>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- [ngClass]="{
+            'btn-danger': regionActiva === region &&'americas',
+            'btn-succes': regionActiva === region &&'asia',
+            'btn-warning': regionActiva === region &&'europe',
+            'btn-secondary': regionActiva === region &&'africa',
+            'btn-outline-primary': regionActiva !== region
+        }" (click)="activarRegion(region)" -->

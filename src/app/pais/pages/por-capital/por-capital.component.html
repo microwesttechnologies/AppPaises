@@ -1,1 +1,21 @@
-<p>por-capital works!</p>
+<h2 class="animate__animated animate__slideInLeft ">CONSULTA POR CAPITALES</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-pais-input 
+        (onEnter)="buscar($event)"
+        (onDebounce)="sugerencias($event)"
+        placeholder="Buscar por capital....."
+        ></app-pais-input>
+    </div>
+</div>
+<hr>
+<div class="alert alert-danger" *ngIf="error">
+    No hay capitales llamados como <strong>{{this.termino}}</strong>
+</div>
+
+<div class="row" *ngIf="capitales.length > 0" >
+    <div class="col">
+        <app-pais-table [capitales]="capitales"></app-pais-table>
+    </div>
+</div>

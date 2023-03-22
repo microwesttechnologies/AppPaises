@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Capital } from '../../interfaces/capitales.interface';
 import { RESTCountries } from '../../interfaces/pais.interface';
 import { PaisService } from '../../services/pais.service';
 
@@ -11,7 +12,8 @@ import { PaisService } from '../../services/pais.service';
 export class PaisTableComponent {
 
  @Input() paises: RESTCountries[] = [];
+ @Input() capitales: Capital[] = [];
  @Input() termino: string = "";
- show: boolean = false;
+ show: boolean = true;
 
 }

@@ -1,14 +1,30 @@
-<h2>CONSULTA POR PAIS</h2>
+<h2 class="animate__animated animate__slideInLeft">CONSULTA POR PAIS</h2>
 <hr>
 <div class="row">
     <div class="col">
-        <app-pais-input 
-        (onEnter)="buscar($event)"
-        (onDebounce)="sugerencias($event)"
-        ></app-pais-input>
+        <app-pais-input (onEnter)="buscar($event)" (onDebounce)="sugerencias($event)"
+            placeholder="Buscar por pais....."></app-pais-input>
     </div>
 </div>
+
+
+<ul *ngIf="mostrarSugerencia" class="list-group">
+    <li *ngFor="let pais of paisesSugerencias" class="list-group-item list-group-item-action">
+        <a class="nav-link" [routerLink]="['/pais', pais.cca2]">
+            {{pais.name.common}}
+        </a>
+    </li>
+    <li class="list-group-item list-group-item-action">
+        <a class="nav-link" (click)="buscar(termino) ">
+           Buscar "{{termino}}"
+        </a>
+    </li>
+    
+</ul>
+
+
 <hr>
+
 <div class="alert alert-danger" *ngIf="error">
     No hay paises llamados como <strong>{{this.termino}}</strong>
 </div>

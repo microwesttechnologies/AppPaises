@@ -1,10 +1,4 @@
-// To parse this data:
-//
-//   import { Convert } from "./file";
-//
-//   const rESTCountries = Convert.toRESTCountries(json);
-
-export interface RESTCountries {
+export interface Capital {
     name:         Name;
     tld:          string[];
     cca2:         string;
@@ -39,8 +33,6 @@ export interface RESTCountries {
     coatOfArms:   CoatOfArms;
     startOfWeek:  string;
     capitalInfo:  CapitalInfo;
-    
-    
 }
 
 export interface CapitalInfo {
@@ -58,10 +50,10 @@ export interface CoatOfArms {
 }
 
 export interface Currencies {
-    HNL: Hnl;
+    COP: Cop;
 }
 
-export interface Hnl {
+export interface Cop {
     name:   string;
     symbol: string;
 }
@@ -113,20 +105,4 @@ export interface NativeName {
 export interface Translation {
     official: string;
     common:   string;
-}
-
-export interface PostalCode {
-    format: string;
-    regex:  string;
-}
-
-// Converts JSON strings to/from your types
-export class Convert {
-    public static toRESTCountries(json: string): RESTCountries[] {
-        return JSON.parse(json);
-    }
-
-    public static rESTCountriesToJson(value: RESTCountries[]): string {
-        return JSON.stringify(value);
-    }
 }
